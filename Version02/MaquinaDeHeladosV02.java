@@ -125,7 +125,7 @@ public class MaquinaDeHeladosV02 {
 
         } while (util.comprobarHelado());
 
-        if (mh.hayHelado(resp) != null) {
+        if (mh.checkHelado(resp) != null) {
             System.out.println("Enhorabuena has comprado el helado " + mh.pedirHelado(resp));
         } else {
             System.out.println("Error, al realizar la compra.");

@@ -41,7 +41,7 @@ public class MaquinaHelado {
         }
     }
 
-     public Helado hayHelado(String posicion) {
+     public Helado checkHelado(String posicion) {
         
         int i = Character.getNumericValue(posicion.charAt(0));
         int j = Character.getNumericValue(posicion.charAt(1));
