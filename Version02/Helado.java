@@ -22,7 +22,7 @@ public class Helado {
 
     @Override
     public String toString() {
-        return "Helado{" + "nombre=" + nombre + ", precio=" + precio + ", tipo=" + tipo + ", cantidad=" + cantidad + '}';
+        return nombre + “  :  “ + precio + “€ : “ + tipo + “ : Quedan: ” + cantidad;    
     }
     
     
