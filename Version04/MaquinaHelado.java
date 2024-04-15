@@ -37,7 +37,7 @@ public class MaquinaHelado {
             throw new NotValidPositionException("La posición es incorrecta");
         } else if (this.monedero < h.get(posicion).getPrecio()) {
             throw new NotEnoughMoneyException("No hay dinero suficiente");
-        } else if (h.get(posicion).getCantidad() > 0) {
+        } else if (h.get(posicion).getCantidad() < 0) {
             throw new QuantityExceededException("La cantidad de helados es insuficiente");
         } else {
             h.get(posicion).setCantidad(this.h.get(posicion).getCantidad() - 1);
