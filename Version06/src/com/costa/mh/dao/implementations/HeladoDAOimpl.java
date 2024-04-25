@@ -36,7 +36,7 @@ public class HeladoDAOimpl implements HeladoDAO, AutoCloseable {
     @Override
     public List<Helado> getHelados() throws Exception {
         List<Helado> he = new ArrayList<>();
-        String sentencia = "select * from helado;";
+        String sentencia = "select posicion, nombre, precio, tipo, cantidad  from helado;";
         try (PreparedStatement pstm = con.prepareStatement(sentencia); ResultSet rs = pstm.executeQuery();) {
             while (rs.next()) {
                 he.add(new Helado(rs.getString("posicion"), rs.getString("nombre"), rs.getDouble("precio"), rs.getString("tipo"),
@@ -70,7 +70,7 @@ public class HeladoDAOimpl implements HeladoDAO, AutoCloseable {
     @Override
     public Helado getHeladoByPosition(String posicion) throws Exception {
         Helado he = null;
-        String sentencia = "select * from helado where posicion = ?";
+        String sentencia = "select posicion, nombre, precio, tipo, cantidad from helado where posicion = ?";
         ResultSet rs = null;
         try (PreparedStatement pstm = con.prepareStatement(sentencia);) {
             pstm.setString(1, posicion);
