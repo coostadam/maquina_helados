@@ -5,6 +5,7 @@
 package com.costa.mh.dao.interfaces;
 
 import com.costa.mh.dao.pojo.Venta;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,5 +14,6 @@ import com.costa.mh.dao.pojo.Venta;
 public interface VentaDAO {
 
     public int insertVenta(Venta v) throws Exception;
-
+    public ArrayList<Venta> getVenta() throws Exception;
+    
 }

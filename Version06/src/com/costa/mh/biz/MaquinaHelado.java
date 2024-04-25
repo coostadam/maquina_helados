@@ -12,6 +12,7 @@ import com.costa.mh.exceptions.NotValidPositionException;
 import com.costa.mh.dao.pojo.Helado;
 import com.costa.mh.dao.pojo.Venta;
 import com.costa.mh.utils.Utils;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -42,7 +43,7 @@ public class MaquinaHelado extends Helado {
                 this.monedero = this.util.redondeoDosDecimales(this.monedero);
                 h.setCantidad(h.getCantidad() - 1);
                 heladoImpl.updateHelado(h);
-                v = new Venta(posicion, h.getNombre(), h.getPrecio(), h.getTipo());
+                v = new Venta(LocalDate.now().toString(), posicion, h.getNombre(), h.getPrecio(), h.getTipo(), 1);
                 ventaImpl.insertVenta(v);
             }
         } catch (Exception e) {

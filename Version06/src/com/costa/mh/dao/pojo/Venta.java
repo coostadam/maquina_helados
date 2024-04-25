@@ -9,18 +9,23 @@ package com.costa.mh.dao.pojo;
  * @author dev
  */
 public class Venta {
+    private String fecha_hora;
     private String posicion;
     private String nombre;
     private double precio;
     private String tipo;
-    private int cantidad = 1;
+    private int cantidad;
 
-    public Venta(String posicion, String nombre, double precio, String tipo) {
+    public Venta(String fecha_hora, String posicion, String nombre, double precio, String tipo, int cantidad) {
+        this.fecha_hora = fecha_hora;
         this.posicion = posicion;
         this.nombre = nombre;
         this.precio = precio;
         this.tipo = tipo;
+        this.cantidad = cantidad;
     }
+
+    
 
     public String getTipo() {
         return tipo;
