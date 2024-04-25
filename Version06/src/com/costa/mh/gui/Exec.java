@@ -9,8 +9,6 @@ import com.costa.mh.exceptions.QuantityExceededException;
 import com.costa.mh.exceptions.NotValidPositionException;
 import java.util.Scanner;
 import com.costa.mh.biz.MaquinaHelado;
-import com.costa.mh.exceptions.NotUpdateValue;
-import com.costa.mh.utils.Utils;
 import com.costa.mh.dao.pojo.Helado;
 
 
@@ -24,7 +22,6 @@ public class Exec {
         Scanner sc = new Scanner(System.in);
         String resp = "";
         MaquinaHelado mh = new MaquinaHelado();
-        Utils util = new Utils();
 
         do {
 
@@ -34,18 +31,18 @@ public class Exec {
             System.out.println("'Apagar' para terminar.");
             System.out.print("¿Qué deseas? --> ");
             resp = sc.nextLine();
-            util.setResp(resp);
 
             do {
 
-                if (util.comprobarMenuIni()) {
+                if (!(resp.equalsIgnoreCase("Ver") ||resp.equalsIgnoreCase("Dinero") ||resp.equalsIgnoreCase("Comprar")
+                            || resp.equalsIgnoreCase("Apagar"))) {
                     System.out.println("Texto incorrecto.");
                     System.out.print("Introduce otra vez: ");
                     resp = sc.nextLine();
-                    util.setResp(resp);
                 }
 
-            } while (util.comprobarMenuIni());
+            } while (!(resp.equalsIgnoreCase("Ver") ||resp.equalsIgnoreCase("Dinero") ||resp.equalsIgnoreCase("Comprar")
+                            || resp.equalsIgnoreCase("Apagar")));
 
             if (!resp.equalsIgnoreCase("Apagar")) {
 
@@ -57,10 +54,10 @@ public class Exec {
                     System.out.println("------------------------------------------------------------------");
                 } else if (resp.equalsIgnoreCase("Dinero")) {
                     System.out.println("------------------------------------------------------------------");
-                    introducirDinero(sc, mh, util);
+                    introducirDinero(sc, mh);
                 } else if (resp.equalsIgnoreCase("Comprar")) {
                     System.out.println("------------------------------------------------------------------");
-                    comprarHelado(sc, mh, util);
+                    comprarHelado(sc, mh);
                 }
 
             }
@@ -76,7 +73,7 @@ public class Exec {
         System.out.println();
     }
 
-    public static void introducirDinero(Scanner sc, MaquinaHelado mh, Utils util) {
+    public static void introducirDinero(Scanner sc, MaquinaHelado mh) {
         String resp = "";
         do {
 
@@ -89,18 +86,18 @@ public class Exec {
             System.out.println("'Volver' para retroceder al menú principal.");
             System.out.print("¿Qué deseas? --> ");
             resp = sc.nextLine();
-            util.setResp(resp);
 
             do {
 
-                if (util.comprobarDinero()) {
+                if (!(resp.equalsIgnoreCase("A") || resp.equalsIgnoreCase("B") || resp.equalsIgnoreCase("C")
+                        || resp.equalsIgnoreCase("D") || resp.equalsIgnoreCase("E") || resp.equalsIgnoreCase("Volver"))) {
                     System.out.println("Texto incorrecto.");
                     System.out.print("Introduce otra vez: ");
                     resp = sc.nextLine();
-                    util.setResp(resp);
                 }
 
-            } while (util.comprobarDinero());
+            } while (!(resp.equalsIgnoreCase("A") || resp.equalsIgnoreCase("B") || resp.equalsIgnoreCase("C")
+                        || resp.equalsIgnoreCase("D") || resp.equalsIgnoreCase("E") || resp.equalsIgnoreCase("Volver")));
 
             if (!resp.equalsIgnoreCase("Volver")) {
                 if (resp.equalsIgnoreCase("A")) {
@@ -128,7 +125,7 @@ public class Exec {
         System.out.println("------------------------------------------------------------------");
     }
 
-    public static void comprarHelado(Scanner sc, MaquinaHelado mh, Utils util) throws Exception {
+    public static void comprarHelado(Scanner sc, MaquinaHelado mh) throws Exception {
         String resp;
         Helado heladoComprado;
         System.out.println("Bienvenido, vas a realizar una compra. ");
@@ -141,7 +138,7 @@ public class Exec {
 
         } catch (NotEnoughMoneyException e) {
             e.printStackTrace();
-        } catch (NotValidPositionException | NotUpdateValue | QuantityExceededException e) {
+        } catch (NotValidPositionException | QuantityExceededException e) {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();

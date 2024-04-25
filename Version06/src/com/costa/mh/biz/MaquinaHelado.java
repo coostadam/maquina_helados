@@ -11,7 +11,6 @@ import com.costa.mh.exceptions.QuantityExceededException;
 import com.costa.mh.exceptions.NotValidPositionException;
 import com.costa.mh.dao.pojo.Helado;
 import com.costa.mh.dao.pojo.Venta;
-import com.costa.mh.exceptions.NotUpdateValue;
 import com.costa.mh.utils.Utils;
 import java.util.List;
 

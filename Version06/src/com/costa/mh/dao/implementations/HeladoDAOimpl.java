@@ -63,9 +63,7 @@ public class HeladoDAOimpl implements HeladoDAO, AutoCloseable {
             throw e;
         }
         return r;
-
     }
-
 
     @Override
     public Helado getHeladoByPosition(String posicion) throws Exception {
