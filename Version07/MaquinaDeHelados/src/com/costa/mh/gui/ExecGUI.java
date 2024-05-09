@@ -11,6 +11,7 @@ import com.costa.mh.exceptions.NotValidPositionException;
 import com.costa.mh.exceptions.QuantityExceededException;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -241,54 +242,57 @@ public class ExecGUI extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(188, 188, 188)
-                .addComponent(labelPresentacion))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(527, 527, 527)
-                        .addComponent(labelPosHelado, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addComponent(labelDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(81, 81, 81)
-                .addComponent(botonIntroMoneda)
-                .addGap(12, 12, 12)
-                .addComponent(getCambio)
-                .addGap(6, 6, 6)
-                .addComponent(pedirHelado, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(labelExceptions, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(labelHelado, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(boton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(boton2)
-                .addGap(6, 6, 6)
-                .addComponent(boton3))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(500, 500, 500)
-                .addComponent(boton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(boton5)
-                .addGap(6, 6, 6)
-                .addComponent(boton6)
-                .addGap(12, 12, 12)
-                .addComponent(botonBorrar))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(500, 500, 500)
-                .addComponent(boton7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(boton0)
+                        .addGap(188, 188, 188)
+                        .addComponent(labelPresentacion))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(boton8)
                         .addGap(6, 6, 6)
-                        .addComponent(boton9))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(527, 527, 527)
+                                .addComponent(labelPosHelado, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addComponent(labelDinero, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(81, 81, 81)
+                        .addComponent(botonIntroMoneda)
+                        .addGap(12, 12, 12)
+                        .addComponent(getCambio)
+                        .addGap(6, 6, 6)
+                        .addComponent(pedirHelado, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(labelExceptions, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(labelHelado, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(boton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boton3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(500, 500, 500)
+                        .addComponent(boton4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boton5)
+                        .addGap(6, 6, 6)
+                        .addComponent(boton6)
+                        .addGap(12, 12, 12)
+                        .addComponent(botonBorrar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(500, 500, 500)
+                        .addComponent(boton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(boton0)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(boton8)
+                                .addGap(6, 6, 6)
+                                .addComponent(boton9)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,7 +317,7 @@ public class ExecGUI extends javax.swing.JFrame {
                     .addComponent(labelHelado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(boton1)
                             .addComponent(boton2)
                             .addComponent(boton3))))
@@ -384,11 +388,14 @@ public class ExecGUI extends javax.swing.JFrame {
     private void pedirHeladoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pedirHeladoActionPerformed
         try {
             this.h = this.mh.pedirHelado(this.posHelado);
-            this.labelExceptions.setText("Ha comprado el helado: " + h.getNombre());
+            JOptionPane.showMessageDialog(this, "Enhorabuena has comprado el helado " + this.h.getNombre());
+            ModalChange modalChange = new ModalChange(this, true);
+            modalChange.setVisible(true);
+            refrescarLabelDinero();
         } catch (NotEnoughMoneyException | NotValidPositionException | QuantityExceededException e) {
-            this.labelExceptions.setText(e.getMessage());
+            JOptionPane.showMessageDialog(this, e.getMessage());
         } catch (Exception e) {
-            this.labelExceptions.setText("Ha ocurrido un error inesperado.");
+            JOptionPane.showMessageDialog(this, "Error inesperado, contacte con el administrador de la máquina.");
         }
         refrescar();
         refrescarLabelDinero();
@@ -475,7 +482,7 @@ public class ExecGUI extends javax.swing.JFrame {
         ArrayList<Helado> helados = this.mh.heladoToList();
         m.setNumRows(0);
         for (Helado helado : helados) {
-            Object[] o = {helado.getPosicion(), helado.getNombre(), helado.getPrecio() + "€", helado.getTipo(), helado.getCantidad()};
+            Object[] o = {helado.getPosicion(), helado.getNombre(), helado.getPrecio() + "0€", helado.getTipo(), helado.getCantidad()};
             m.addRow(o);
         }
     }

@@ -43,6 +43,7 @@ public class ModalIntroCoins extends javax.swing.JDialog {
         cincuentaCents = new javax.swing.JButton();
         euro = new javax.swing.JButton();
         dosEuros = new javax.swing.JButton();
+        cincoCents = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
@@ -90,30 +91,38 @@ public class ModalIntroCoins extends javax.swing.JDialog {
             }
         });
 
+        cincoCents.setText("0.05€");
+        cincoCents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cincoCentsActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cincuentaCents)
+                .addGap(18, 18, 18)
+                .addComponent(euro)
+                .addGap(18, 18, 18)
+                .addComponent(dosEuros)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(cincoCents)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(57, 57, 57)
-                        .addComponent(euro)
-                        .addGap(18, 18, 18)
-                        .addComponent(dosEuros))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(diezCents)
-                                .addGap(18, 18, 18)
-                                .addComponent(veinteCents))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(labelDineroIntroducido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(cincuentaCents)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(diezCents)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(veinteCents))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(labelDineroIntroducido, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,16 +131,17 @@ public class ModalIntroCoins extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelDineroIntroducido)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(diezCents)
-                    .addComponent(veinteCents)
-                    .addComponent(cincuentaCents))
+                    .addComponent(cincoCents)
+                    .addComponent(veinteCents))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(euro)
-                    .addComponent(dosEuros))
-                .addContainerGap(30, Short.MAX_VALUE))
+                    .addComponent(dosEuros)
+                    .addComponent(cincuentaCents))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -162,6 +172,10 @@ public class ModalIntroCoins extends javax.swing.JDialog {
         this.padre.mh.setMonedero(this.padre.mh.getMonedero() + 2);
         this.labelDineroIntroducido.setText(this.padre.mh.getMonedero() + "€");
     }//GEN-LAST:event_dosEurosActionPerformed
+
+    private void cincoCentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cincoCentsActionPerformed
+        this.padre.mh.setMonedero(this.padre.mh.getMonedero() + 0.05);
+        this.labelDineroIntroducido.setText(this.padre.mh.getMonedero() + "€");    }//GEN-LAST:event_cincoCentsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,6 +222,7 @@ public class ModalIntroCoins extends javax.swing.JDialog {
 
     private ExecGUI padre;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cincoCents;
     private javax.swing.JButton cincuentaCents;
     private javax.swing.JButton diezCents;
     private javax.swing.JButton dosEuros;
